@@ -1,0 +1,27 @@
+﻿//View para página de formulário de cadastro
+
+@model GerenciamentoDeIdentidades.ViewModels.ContaCadastrarViewModel
+
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cadastrar</h2>
+
+@using (Html.BeginForm())
+{
+    <h4>Cadastre sua conta!</h4>
+
+    <hr />
+
+    @Html.ValidationSummary("", new { @class = "text danger" })
+
+    @Html.EditorForModel()
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Cadastrar" class=" btn btn-default" />
+        </div>
+    </div>
+}
+
